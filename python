@@ -1,0 +1,51 @@
+vexcode_brain_precision = 0
+vexcode_console_precision = 0
+
+
+PARKINGLOT = [[0 for y in range(5)] for x in range(5)]
+
+
+COLUMN = 0
+ROW = 0
+OPENSPOT = 0
+
+
+def when_started1():
+    global PARKINGLOT, COLUMN, ROW, OPENSPOT, vexcode_brain_precision, vexcode_console_precision
+
+
+    OPENSPOT = 0
+    ROW = 1
+    COLUMN = 1
+
+
+    PARKINGLOT = [
+        [0, 2, 1, 2, 2],
+        [0, 0, 0, 0, 0],
+        [0, 1, 2, 1, 1],
+        [0, 0, 0, 0, 0],
+        [0, 1, 2, 1, 2]
+    ]
+
+
+    while ROW < 6:
+        COLUMN = 1
+        while COLUMN < 6:
+
+
+            if PARKINGLOT[ROW - 1][COLUMN - 1] == 2:
+                OPENSPOT += 1
+
+
+            COLUMN += 1
+
+
+        ROW += 1
+
+
+   
+    print("Open spots: ")
+    print(OPENSPOT)
+
+
+when_started1()
